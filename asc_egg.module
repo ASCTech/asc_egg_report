@@ -8,16 +8,16 @@
 /**
  * Implements hook_user()
  */
-function asc_egg_hook_user ($op) {
+function asc_egg_user ($op) {
   if ($op == "login") {
     asc_egg_report("Login");
   }
 }
 
 /**
- * Implements hook_user()
+ * Implements hook_nodeapi()
  */
-function asc_egg_hook_nodeapi (&$node, $op) {
+function asc_egg_nodeapi (&$node, $op) {
   if ($op == "login") {
     asc_egg_report("Node Insert");
   }
