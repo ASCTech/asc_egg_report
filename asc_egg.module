@@ -18,7 +18,7 @@ function asc_egg_user ($op) {
  * Implements hook_nodeapi()
  */
 function asc_egg_nodeapi (&$node, $op) {
-  if ($op == "login") {
+  if ($op == "insert") {
     asc_egg_report("Node Insert");
   }
 }
