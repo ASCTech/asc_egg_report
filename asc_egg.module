@@ -15,6 +15,13 @@ function asc_egg_user ($op) {
 }
 
 /**
+ * Implements hook_init()
+ */
+function asc_egg_init ($op) {
+  asc_egg_report("Page Load");
+}
+
+/**
  * Implements hook_nodeapi()
  */
 function asc_egg_nodeapi (&$node, $op) {
