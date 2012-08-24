@@ -25,15 +25,16 @@ function asc_egg_nodeapi (&$node, $op) {
 
 
 function asc_egg_report($op) {
-  $data = array("name" => $op, "service" => "Nova", "timestamp" => date('c'));
+  $data = array("name" => $op, "timestamp" => date('c'));
   $data_string = json_encode($data);
 
-  $ch = curl_init('http://egg.asc.ohio-state.edu/events');
+  $ch = curl_init('https://egg.asc.ohio-state.edu/events');
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Type: application/json',
+    'X-API-KEY: 0fd957055354698d9dce939d49a823c8',
     'Content-Length: ' . strlen($data_string))
   );
 
