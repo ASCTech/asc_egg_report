@@ -1,6 +1,6 @@
 name = ASC Egg Reporter
 description = Module to report logins and node creations to egg.
-core = 6.x
+core = 7.x
 package = ASC
-version = 6.x-1.0-dev
+version = 7.x-1.0-dev
 project = asc_egg
