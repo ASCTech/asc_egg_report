@@ -17,7 +17,7 @@ function asc_egg_user ($op) {
 /**
  * Implements hook_init()
  */
-function asc_egg_init () {
+function asc_egg_exit () {
   asc_egg_report("Page Load");
 }
 
