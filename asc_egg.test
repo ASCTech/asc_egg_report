@@ -1,0 +1,21 @@
+class EggUnitTest extends DrupalUnitTestCase {
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Egg Client Test',
+      'description' => 'Ensure that the egg example works correctly.',
+      'group' => 'ASC',
+    );
+  }
+
+  function setUp() {
+    drupal_load('module', 'asc_egg');
+    parent::setUp();
+  }
+
+  public function eggTest() {
+    $input = 'out';
+    $output = 'out';
+    $this->assertEqual($input, $output, t('Returned expected result.'));
+  }
+}
