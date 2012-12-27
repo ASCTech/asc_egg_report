@@ -8,8 +8,8 @@
 /**
  * Implements hook_user()
  */
-function asc_egg_user($op) {
-  if ($op == "login") {
+function asc_egg_user($operation) {
+  if ($operation == "login") {
     _asc_egg_report("Login");
   }
 }
@@ -24,15 +24,15 @@ function asc_egg_exit() {
 /**
  * Implements hook_nodeapi()
  */
-function asc_egg_nodeapi(&$node, $op) {
-  if ($op == "insert") {
+function asc_egg_nodeapi(&$node, $operation) {
+  if ($operation == "insert") {
     _asc_egg_report("Node Insert");
   }
 }
 
 
-function _asc_egg_report($op) {
-  $data = array("name" => $op, "timestamp" => date('c'));
+function _asc_egg_report($operation) {
+  $data = array("name" => $operation, "timestamp" => date('c'));
   $data_string = json_encode($data);
 
   $ch = curl_init('https://egg.asc.ohio-state.edu/events');
