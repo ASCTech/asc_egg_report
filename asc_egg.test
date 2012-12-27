@@ -1,3 +1,5 @@
+<?php 
+
 class EggUnitTest extends DrupalUnitTestCase {
 
   public static function getInfo() {
@@ -9,11 +11,11 @@ class EggUnitTest extends DrupalUnitTestCase {
   }
 
   function setUp() {
-    drupal_load('module', 'asc_egg');
-    parent::setUp();
+    parent::setUp('asc_egg');
+
   }
 
-  public function eggTest() {
+  public function testEggTest() {
     $input = 'out';
     $output = 'out';
     $this->assertEqual($input, $output, t('Returned expected result.'));

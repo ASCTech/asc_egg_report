@@ -4,3 +4,5 @@ core = 7.x
 package = ASC
 version = 7.x-1.0-dev
 project = asc_egg
+
+files[] = asc_egg.test

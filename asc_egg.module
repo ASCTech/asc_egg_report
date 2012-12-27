@@ -8,37 +8,37 @@
 /**
  * Implements hook_user()
  */
-function asc_egg_user ($op) {
+function asc_egg_user($op) {
   if ($op == "login") {
-    asc_egg_report("Login");
+    _asc_egg_report("Login");
   }
 }
 
 /**
  * Implements hook_init()
  */
-function asc_egg_exit () {
-  asc_egg_report("Page Load");
+function asc_egg_exit() {
+  _asc_egg_report("Page Load");
 }
 
 /**
  * Implements hook_nodeapi()
  */
-function asc_egg_nodeapi (&$node, $op) {
+function asc_egg_nodeapi(&$node, $op) {
   if ($op == "insert") {
-    asc_egg_report("Node Insert");
+    _asc_egg_report("Node Insert");
   }
 }
 
 
-function asc_egg_report($op) {
+function _asc_egg_report($op) {
   $data = array("name" => $op, "timestamp" => date('c'));
   $data_string = json_encode($data);
 
   $ch = curl_init('https://egg.asc.ohio-state.edu/events');
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Type: application/json',
     'X-API-KEY: 0fd957055354698d9dce939d49a823c8',
