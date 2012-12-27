@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_user()
+ * Implements hook_user().
  */
 function asc_egg_user($operation) {
   if ($operation == "login") {
@@ -15,14 +15,14 @@ function asc_egg_user($operation) {
 }
 
 /**
- * Implements hook_init()
+ * Implements hook_init().
  */
 function asc_egg_exit() {
   _asc_egg_report("Page Load");
 }
 
 /**
- * Implements hook_nodeapi()
+ * Implements hook_nodeapi().
  */
 function asc_egg_nodeapi(&$node, $operation) {
   if ($operation == "insert") {
